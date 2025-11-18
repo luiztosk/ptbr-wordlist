@@ -26,7 +26,7 @@
     "filter:fr": "cat $npm_package_config_downloadsPath/french.txt|  sed -e 's:^\\(.*\\):\\^\\1,:' > /tmp/all_fr_pattern && grep -vf /tmp/all_fr_pattern $npm_package_config_listsPath/all-no_en-no_sp.csv > $npm_package_config_listsPath/all-no_en-no_sp-no_fr.csv",
     "precsv":"mkdir -p $npm_package_config_listsPath",
     "predownload": "mkdir -p $npm_package_config_downloadsPath",
-    "postgetdict:android": "cd $npm_package_config_downloadsPath && tar -zxvf dictionaries.tar.gz pt_BR* && gunzip pt_BR*.gz"
+    "postgetdict:android": "cd $npm_package_config_downloadsPath && tar --wildcards -zxvf dictionaries.tar.gz pt_BR* && gunzip pt_BR*.gz"
   },
   "repository": {
     "type": "git",
