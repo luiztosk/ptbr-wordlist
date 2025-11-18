@@ -12,7 +12,7 @@
       "bip39FrenchDictUrl": "https://raw.githubusercontent.com/fczuardi/bips/master/bip-0039/french.txt"
   },
   "scripts": {
-    "test": "npm run clean && npm run download && npm run csv && npm run filter && npm run crop10k && npm run a2z",
+    "test": "npm run clean && npm run download && npm run csv && npm run filter && npm run crop10k && npm run a-z",
     "clean": "rm -rf $npm_package_config_downloadsPath $npm_package_config_listsPath",
     "download": "npm run getdict:bip39 && npm run getdict:android",
     "csv": "cat $npm_package_config_downloadsPath/pt_BR_wordlist.combined | grep -E 'word=[^áéíóúâêôãõç,]{5,8},' | sed -e 's:originalFreq=::' -e 's: word=::' -e 's:f=.*,::' |sort -t, -k2 -rn > $npm_package_config_listsPath/all.csv",
